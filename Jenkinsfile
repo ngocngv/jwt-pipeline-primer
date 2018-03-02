@@ -106,6 +106,10 @@ properties([
                  *  JDK8
                  */
                 choice(name: 'jdk_version', choices: 'JDK8\nJDK7', description: 'The JDK generation used for the build'),
+                string(name: 'BRANCH_NAME', default: 'master'),
+                string(name: 'SONATYPE_USER', default: 'admin'),
+                string(name: 'SONATYPE_PASSWORD', default: 'admin123'),
+                
         ]),
         [$class: 'BuildDiscarderProperty', strategy: [$class: 'LogRotator', daysToKeepStr: '7',  numToKeepStr: '']]
 ])
