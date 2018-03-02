@@ -34,7 +34,7 @@
 // -------------------
 
 // SonarQube Host URL
-def SONAR_HOST = 'http://sonarqube:9000'
+def SONAR_HOST = 'http://118.69.135.237:9091'
 
 // Who is allowed to promote for a release? (user names or AD groups, comma separated, no blanks!)
 def RELEASE_PROMOTERS = 'Gruppe_Jira_Mitarbeiter_solutions'
