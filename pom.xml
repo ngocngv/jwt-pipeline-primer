@@ -142,15 +142,5 @@
     </profile>
   </profiles>
 
-  <distributionManagement>
-    <repository>
-      <id>maven2.releases.levigo.de</id>
-      <url>https://levigo.de/maven2/content/repositories/test/</url>
-    </repository>
-    <snapshotRepository>
-      <id>maven2.snapshots.levigo.de</id>
-      <url>https://levigo.de/maven2/content/repositories/levigo-snapshots/</url>
-    </snapshotRepository>
-  </distributionManagement>
 </project>
 
