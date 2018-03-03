@@ -142,7 +142,7 @@
     </repository>
     <snapshotRepository>
       <id>maven2.snapshots.levigo.de</id>
-      <url>http://118.69.135.237:8081/repository/maven-snapshots/</url>
+      <url>http://118.69.135.237:8081/repository/nexus-public-snapshots/</url>
     </snapshotRepository>
   </distributionManagement>
 </project>
