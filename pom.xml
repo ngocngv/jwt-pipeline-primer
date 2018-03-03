@@ -38,12 +38,6 @@
     <module>ee</module>
   </modules>
 
-  <scm>
-    <connection>scm:git:ssh://git@levigo.de:7999/~albanebn/jenkins-jwt-pipeline-primer.git</connection>
-    <developerConnection>scm:git:ssh://git@levigo.de:7999/~albanebn/jenkins-jwt-pipeline-primer.git</developerConnection>
-    <tag>HEAD</tag>
-  </scm>
-
   <build>
     <plugins>
       <plugin>
