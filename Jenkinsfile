@@ -247,7 +247,7 @@ try {
 
                 stage('Deploy snapshot artifacts') {
                   timeout(time: timeouts.deploy, unit: timeouts.unit) {
-                    sh "mvn -B -s $MVN_SETTINGS -gs $MVN_SETTINGS $localRepoParam deploy"
+                    sh "mvn -X -B -s $MVN_SETTINGS -gs $MVN_SETTINGS $localRepoParam --threads 2 -DskipTests deploy"
                   }
                 }
               }
