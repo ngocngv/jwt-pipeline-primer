@@ -137,24 +137,14 @@
   </profiles>
   <distributionManagement>
     <repository>
-      <id>ossrh</id>
+      <id>public</id>
       <url>http://118.69.135.237:8081/repository/public/</url>
     </repository>
     <snapshotRepository>
-      <id>ossrh</id>
+      <id>snapshots</id>
       <url>http://118.69.135.237:8081/repository/public-snapshots/</url>
     </snapshotRepository>
   </distributionManagement>
-  
 
-    <servers>
-      <server>
-        <id>ossrh</id>
-        <username>admin</username>
-        <password>admin123</password>
-      </server>
-    </servers>
-
-  
 </project>
 
