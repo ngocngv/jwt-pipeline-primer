@@ -137,13 +137,24 @@
   </profiles>
   <distributionManagement>
     <repository>
-      <id>maven2.releases.levigo.de</id>
+      <id>ossrh</id>
       <url>http://118.69.135.237:8081/repository/public/</url>
     </repository>
     <snapshotRepository>
-      <id>maven2.snapshots.levigo.de</id>
-      <url>http://118.69.135.237:8081/repository/nexus-public-snapshots/</url>
+      <id>ossrh</id>
+      <url>http://118.69.135.237:8081/repository/public-snapshots/</url>
     </snapshotRepository>
   </distributionManagement>
+  
+  <settings>
+    <servers>
+      <server>
+        <id>ossrh</id>
+        <username>admin</username>
+        <password>admin123</password>
+      </server>
+    </servers>
+  </settings>
+  
 </project>
 
