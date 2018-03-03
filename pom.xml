@@ -137,8 +137,8 @@
   </profiles>
   <distributionManagement>
     <repository>
-      <id>public</id>
-      <url>http://118.69.135.237:8081/repository/public/</url>
+      <id>releases</id>
+      <url>http://118.69.135.237:8081/repository/releases/</url>
     </repository>
     <snapshotRepository>
       <id>snapshots</id>
