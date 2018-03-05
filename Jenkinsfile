@@ -255,7 +255,6 @@ try {
           }
         }
       }
-    }
     ) // end of parallel
  
       currentBuild.result = 'SUCCESS' // Important for the Stash notifier!
