@@ -254,92 +254,10 @@ try {
             }
           }
         }
-      }, docker_image: {
-        node('docker') {
-          exws(extWorkspace) {
-            stage('Docker image build') {
-              timeout(time: timeouts.docker_image, unit: timeouts.unit) {
-//                def dockerTool = tool "docker"
-//                echo dockerTool
-//                echo env.BUILD_NUMBER
-//                def version = getReleaseVersionFromPom(pom)
-//
-//                docker.withRegistry('https://registry.container.levigo.de:5000', 'registry-id') {
-//                  echo dockerTool
-//                  env.PATH = "${tool 'M3'}/bin:${env.JENKINS_HOME}/tools/rancher-compose:${env.PATH}"
-//                  echo env.PATH
-//                  docker.withServer("tcp://${env.DOCKER_HOST}:2375") {
-//
-//                    withCredentials([file(credentialsId: 'mavenSettings', variable: 'mavenSettings')]) {
-//                      // copy the demos that match the standard naming schema
-//                      def artifacts = ["showcase",//
-//                                       "basicviewer",//
-//                                       "enterprise", //
-//                                       "touch", //
-//                                       "simple", //
-//                      ]
-//                      for (String artifact : artifacts) {
-//                        sh "cp ${extWorkspace.completeWorkspacePath}/demo/${artifact}/target/webtoolkit-demo-${artifact}-${version}.war " +
-//                                "${extWorkspace.completeWorkspacePath}/docker/temp/${artifact}.war"
-//                      }
-//
-//                      // copy those demos in separate commands as they don't match the standard scheme like the ones
-//                      // defined in $artifacts.
-//                      sh "cp ${extWorkspace.completeWorkspacePath}/demo/spring/target/webtoolkit-demo-simple-spring-${version}.war " +
-//                              "${extWorkspace.completeWorkspacePath}/docker/temp/spring.war"
-//                      sh "cp ${extWorkspace.completeWorkspacePath}/demo/jwttestportal/target/webtoolkit-jwttestportal-${version}.war " +
-//                              "${extWorkspace.completeWorkspacePath}/docker/temp/testportal.war"
-//                      sh "cp ${extWorkspace.completeWorkspacePath}/demo/enterprise-ear/target/webtoolkit-demo-enterprise-ear-${version}.ear " +
-//                              "${extWorkspace.completeWorkspacePath}/docker/temp/webtoolkit-demo-enterprise-ear.ear"
-//
-//                      // copy and rename so it can serve as home page for the whole website
-//                      sh "cp ${extWorkspace.completeWorkspacePath}/dist/demoserver/target/webtoolkit-dist-server-${version}.war " +
-//                              "${extWorkspace.completeWorkspacePath}/docker/temp/ROOT.war"
-//
-//                      // copy those 2 zips, not to deploy them, but to make them downloadable
-//                      sh "cp ${extWorkspace.completeWorkspacePath}/dist/all/target/webtoolkit-dist-all-${version}-all.zip " +
-//                              "${extWorkspace.completeWorkspacePath}/docker/temp/webtoolkit-dist-all.zip"
-//                      sh "cp ${extWorkspace.completeWorkspacePath}/dist/m2-repo/target/webtoolkit-dist-m2-repo-${version}-repo.zip " +
-//                              "${extWorkspace.completeWorkspacePath}/docker/temp/webtoolkit-dist-m2-repo.zip"
-//                    }
-//
-//
-//                    def tomcat_container, websphere_container
-//                    stage("docker: build") {
-//
-//                      sh "cp ${extWorkspace.completeWorkspacePath}/docker/temp/*.war docker/tomcat/resources"
-//                      sh "cp ${extWorkspace.completeWorkspacePath}/docker/temp/*.zip docker/tomcat/resources"
-//                      sh "cp ${extWorkspace.completeWorkspacePath}/docker/temp/*.ear docker/websphere-traditional/resources"
-//                      docker.withTool("docker") {
-//                        tomcat_container = docker.build("jadice-webtoolkit-tomcat:${LATEST}", "docker/tomcat/")
-//                        websphere_container = docker.build("jadice-webtoolkit-websphere-traditional:${LATEST}",
-//                                "docker/websphere-traditional/")
-//                      }
-//                    }
-//                    stage("docker: publish") {
-//                      tomcat_container.push "${LATEST}"
-//                      websphere_container.push "${LATEST}"
-//
-//                    }
-//                  }
-//                }
-              }
-            }
-          }
-        } // end of docker build
-      }
-      ) // end of parallel
-
-      // We have no regression tests yet
-      /*
-    if (env.BRANCH_NAME == MASTER) {
-      stage ('Regression') {
-        timeout (time: timeouts.regression, unit: timeouts.unit) {
-          echo 'Hello Regression Tests'
-        }
       }
     }
-    */
+    ) // end of parallel
+ 
       currentBuild.result = 'SUCCESS' // Important for the Stash notifier!
     } catch (error) {
       currentBuild.result = 'FAILED' // Important for the Stash notifier!
