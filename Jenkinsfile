@@ -37,7 +37,7 @@
 def SONAR_HOST = 'http://118.69.135.237:9091'
 
 // Who is allowed to promote for a release? (user names or AD groups, comma separated, no blanks!)
-def RELEASE_PROMOTERS = 'Gruppe_Jira_Mitarbeiter_solutions'
+def RELEASE_PROMOTERS = 'admin'
 
 // List of email addresses which will be notified by the Mailer plugin upon build failures
 def mailRecipients = 'b.albanese@levigo.de k.adlung@levigo.de m.nguyen@levigo.de d.gehle@levigo.de'
